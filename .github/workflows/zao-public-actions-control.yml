@@ -1,0 +1,20 @@
+name: ZAO Public Actions Control
+
+on:
+  push:
+    branches:
+      - zao/actions-public-control-plane-test-20260920
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Confirm runner allocation
+        run: echo "runner allocated"
+
+      - name: Confirm Node execution
+        run: node --version
